@@ -17,6 +17,7 @@ var urlSearchBlog = [
 	"http://search.twitter.com/search.json?q=http%3A%2F%2Fblog.ninja-squad.com%2F2013%2F02%2F13%2Fjava-8&rpp=100&result_type=recent&callback=?"
 ]
 
+
 $(function() {
 	$(urlRetweets).each(function(index, item) {
 		$.getJSON(item, function(users) {
@@ -36,10 +37,17 @@ $(function() {
 
 	var contestants = [];
 	function addContestant(username) {
-		if ($.inArray(username,contestants) < 0) {
-			contestants.push(username);
-			$("#contestants").append("<li><a href='http://twitter.com/"+username+"'>@"+username+"</a></li>")
+		if (!isNinja(username)) {
+			if ($.inArray(username,contestants) < 0) {
+				contestants.push(username);
+				$("#contestants").append("<li><a href='http://twitter.com/"+username+"'>@"+username+"</a></li>")
+			}
 		}
+	}
+
+	var ninjas=["agnes_crepet", "cedric_exbrayat", "jbnizet", "clacote", "ninjasquad"];
+	function isNinja(username) {
+		return ($.inArray(username.toLowerCase(), ninjas) >= 0);
 	}
 })
 
