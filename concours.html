@@ -24,7 +24,7 @@
 		
 	</div>
 	
-	<h2>Les participants au concours</h1>
+	<h2>Les participants <small>Ceux ayant twitté l'article</small></h1>
 	<table id="contestants" class="table table-striped table-bordered">
 		<thead>
 			<tr>
@@ -39,10 +39,24 @@
 	<p>
 		Aucune triche dans l'obtention de cette liste : le <a href="https://github.com/Ninja-Squad/concours-retweet-ninjackaton" title="Code source de cette page sur le GitHub de Ninja Squad">code source est disponible</a>.
 	</p>
+	<p>
+		Cette liste est obtenue :
+		<ul>
+			<li>En <a href="https://api.twitter.com/1/statuses/301679956147187713/retweeted_by.json?count=100&callback=?" title="Recherche des retweeters d'un tweet par Twitter API v1">listant</a> les twittos ayant retweeté ce premier tweet :
+<blockquote class="twitter-tweet" lang="fr"><p>Apprivoiser Java 8 et les lambdas : <a href="http://t.co/qAE3q0A4" title="http://blog.ninja-squad.com/2013/02/13/java-8/">blog.ninja-squad.com/2013/02/13/jav…</a> Les supports du <a href="https://twitter.com/search/%23ninjackaton">#ninjackaton</a>, un aperçu de notre formation Java 8!</p>&mdash; Ninja Squad (@NinjaSquad) <a href="https://twitter.com/NinjaSquad/status/301678974201905154">13 février 2013</a></blockquote>
+			</li>
+			<li>En <a href="https://api.twitter.com/1/statuses/301678974201905154/retweeted_by.json?count=100&callback=?" title="Recherche des retweeters d'un tweet par Twitter API v1">listant</a> les twittos ayant retweeté ce second tweet :
+<blockquote class="twitter-tweet" lang="fr"><p>Gagnez un t-shirt en retweetant notre article! Apprivoisez Java 8 et les lambdas : <a href="http://t.co/qAE3q0A4" title="http://blog.ninja-squad.com/2013/02/13/java-8/">blog.ninja-squad.com/2013/02/13/jav…</a></p>&mdash; Ninja Squad (@NinjaSquad) <a href="https://twitter.com/NinjaSquad/status/301679956147187713">13 février 2013</a></blockquote>
+			</li>
+			<li>En <a href="http://search.twitter.com/search.json?q=http%3A%2F%2Fblog.ninja-squad.com%2F2013%2F02%2F13%2Fjava-8&rpp=100&result_type=recent&callback=?" title="Recherche de notre URL par Twitter API Search">cherchant</a> les tweets mentionnant <a href="http://blog.ninja-squad.com/2013/02/13/java-8/" title="L'article du blog de Ninja Squad consacré au Ninjackaton Lambda de Java 8">notre article</a>.
+			</li>
+		</ul>
+	</p>
 </div>
 
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+<script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <script>
 var urlRetweets = [
 	"https://api.twitter.com/1/statuses/301679956147187713/retweeted_by.json?count=100&callback=?", 
