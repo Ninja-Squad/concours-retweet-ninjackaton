@@ -10,7 +10,7 @@
 	<h1>Les participants au concours</h1>
 	<table id="contestants" class="table table-striped">
 		<tbody>
-		<tbody>
+		</tbody>
 	</table>
 </div>
 
@@ -48,7 +48,7 @@ $(function() {
 		if (!isNinja(username)) {
 			if ($.inArray(username,contestants) < 0) {
 				contestants.push(username);
-				$("#contestants tbody").append("<li><a href='http://twitter.com/"+username+"'>@"+username+"</a></li>")
+				$("#contestants tbody").append("<tr><td><a href='http://twitter.com/"+username+"'>@"+username+"</a></td></tr>")
 			}
 		}
 	}
