@@ -1,13 +1,21 @@
 <html>
 <head>
+    <title>Le concours de retweets du Ninjackaton</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
 </head>
 <body>
 
-<h1>Les participants au concours</h1>
-<ul id="contestants">
-</ul>
+<div class="container">
+	<h1>Les participants au concours</h1>
+	<table id="contestants" class="table table-striped">
+		<tbody>
+		<tbody>
+	</table>
+</div>
 
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
 <script>
 var urlRetweets = [
 	"https://api.twitter.com/1/statuses/301679956147187713/retweeted_by.json?count=100&callback=?", 
@@ -40,7 +48,7 @@ $(function() {
 		if (!isNinja(username)) {
 			if ($.inArray(username,contestants) < 0) {
 				contestants.push(username);
-				$("#contestants").append("<li><a href='http://twitter.com/"+username+"'>@"+username+"</a></li>")
+				$("#contestants tbody").append("<li><a href='http://twitter.com/"+username+"'>@"+username+"</a></li>")
 			}
 		}
 	}
