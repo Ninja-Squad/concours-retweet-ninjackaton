@@ -29,6 +29,7 @@
 		<thead>
 			<tr>
 				<th>Username Twitter</th>
+				<th>Notre réponse (quasiment) personnelle</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -85,11 +86,21 @@ $(function() {
 	});
 
 	var contestants = [];
+	var answers = [
+		"Merci à toi!",
+		"C'était vraiment cool de ta part!",
+		"Tu sais qu'on t'aime!",
+		"Ca fait chaud au coeur!",
+		"Non vraiment fallait pas, merci!",
+		"T'assures grave!",
+		"Toi t'es vraiment notre préféré!"
+	];
 	function addContestant(username) {
 		if (!isNinja(username)) {
 			if ($.inArray(username,contestants) < 0) {
 				contestants.push(username);
-				$("#contestants tbody").append("<tr><td><a href='http://twitter.com/"+username+"'>@"+username+"</a></td></tr>")
+				$("#contestants tbody")
+					.append("<tr><td><a href='http://twitter.com/"+username+"'>@"+username+"</a></td><td>"+answers[random(answers.length)]+"</td></tr>")
 			}
 		}
 	}
@@ -97,6 +108,10 @@ $(function() {
 	var ninjas=["agnes_crepet", "cedric_exbrayat", "jbnizet", "clacote", "ninjasquad"];
 	function isNinja(username) {
 		return ($.inArray(username.toLowerCase(), ninjas) >= 0);
+	}
+
+	function random(limit) {
+		return Math.floor((Math.random()*limit));
 	}
 })
 
